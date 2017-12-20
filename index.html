@@ -17,47 +17,78 @@
         <h1 class="text-sm-center">top gutter</h1>
       </div>
       <div class="jumbotron bg-primary">
-        <h1 class="text-sm-center">header</h1>
+        <h1 class="text-sm-center">Honeybee Trivia</h1>
       </div>
       <div class="col-10 bg-light">
-        <p class="text-sm-center">Trivia questions and answers will go here.</p>
-        <p class="text-sm-center">
-          <div class="question1 text-sm-center">
-            <p>Q1</p>
-          </div>
-          <div class="question2 text-sm-center">
-            <p>Q2</p>
-          </div>
-          <div class="question3 text-sm-center">
-            <p>Q3</p>
-          </div>
-          <div class="question4 text-sm-center">
-            <p>Q4</p>
-          </div>
-          <div class="question5 text-sm-center">
-            <p>Q5</p>
-          </div>
-          <div class="question6 text-sm-center">
-            <p>Q6</p>
-          </div>
-          <div class="question7 text-sm-center">
-            <p>Q7</p>
-          </div>
-          <div class="question8 text-sm-center">
-            <p>Q8</p>
-          </div>
-        </p>
-      </div>
-      <div class="col-10 bg-info">
-        <h1 class="text-sm-center">footer</h1>
+        <p class="text-sm-center">placeholder</p>
+        <form>
+          <div class="text-sm-center">
+            <h5>During her life (approximately 40 days) a honey bee will gather how much honey?</h5>
+            <!-- answer below -->
+            <input type="radio" class="mc" name="question1" value="1/12 teaspoon of honey">
+            <span class="mc-spacing">1/12 teaspoon of honey</span>
+            <input type="radio" class="mc" name="question1" value="3 cups of honey">
+            <span class="mc-spacing">3 cups of honey</span>
+            <input type="radio" class="mc" name="question1" value="1/2 tablespon of honey">
+            <span class="mc-spacing">1/2 tablespon of honey</span>
+            <input type="radio" class="mc" name="question1" value="Enough to feed 1/4 of the colony">
+            <span class="mc-spacing">Enough to feed 1/4 of the colony</span>
+
+            <h5>Honey bees that collect nectar from flowers are called foragers and visit how many flowers per one flight?</h5>
+            <input type="radio" class="mc" name="question2" value="300-350 flowers"> <span class="mc-spacing">300-350 flowers</span>
+            <input type="radio" class="mc" name="question2" value="200-250 flowers"> <span class="mc-spacing">200-250 flowers</span>
+            <!-- answer below -->
+            <input type="radio" class="mc" name="question2" value="50-100 flowers"> <span class="mc-spacing">50-100 flowers</span>
+            <input type="radio" class="mc" name="question2" value="25-30 flowers"> <span class="mc-spacing">25-30 flowers</span>
+
+            <h5>The queen honey bee lays how many eggs per day?</h5>
+            <!-- answer below -->
+            <input type="radio" class="mc" name="question3" value="1,000-3,000 eggs per day"><span class="mc-spacing">1,000-3,000 eggs per day</span>
+            <input type="radio" class="mc" name="question3" value="500-1000 eggs per day"><span class="mc-spacing">500-1,000 eggs per day</span>
+            <input type="radio" class="mc" name="question3" value="1/12 teaspoon of honey"><span class="mc-spacing">400-800 eggs per day</span>
+            <input type="radio" class="mc" name="question3" value="Enough to feed 1/4 of the colony"><span class="mc-spacing">200-400 eggs per day</span>
+
+            <h5>The drone (the male honey bee) does not have a stinger</h5>
+            <!-- answer below -->
+            <input type="radio" class="mc" name="question4" value="true"><span class="mc-spacing">true</span>
+            <input type="radio" class="mc" name="question4" value="false"><span class="mc-spacing">false</span>
+
+            <h5>We only produce about 30% of the honey we consume in the U.S.</h5>
+            <input type="radio" class="mc" name="question5" value="true"><span class="mc-spacing">true</span>
+            <input type="radio" class="mc" name="question5" value="false"><span class="mc-spacing">false</span>
+
+            <h5>How many bees are in a typical beehive during the summer?</h5>
+            <input type="radio" class="mc" name="question6" value="90,000 - 70,000"><span class="mc-spacing">90,000 - 70,000</span>
+            <!-- answer below -->
+            <input type="radio" class="mc" name="question6" value="40,000 - 60,000"><span class="mc-spacing">40,000 - 60,000</span>
+            <input type="radio" class="mc" name="question6" value="10,000 - 20,000"><span class="mc-spacing">10,000 - 20,000</span>
+
+
+            <h5>What distance do honey bees fly from a hive as they gather nectar and pollen per flight?</h5>
+            <input type="radio" class="mc" name="question7" value="8-9 miles"><span class="mc-spacing">8-9 miles</span>
+            <input type="radio" class="mc" name="question7" value="6-7 miles"><span class="mc-spacing">6-7 miles</span>
+            <input type="radio" class="mc" name="question7" value="5-4 miles"><span class="mc-spacing">5-4 miles</span>
+            <!-- answer below -->
+            <input type="radio" class="mc" name="question7" value="2-3 miles"><span class="mc-spacing">2-3 miles</span>
+
+        </form>
+        </div>
+        <div class="col-10 bg-light ">
+          <button type="button" class="btn btn-success btn-lg btn-spacing center-block">Results</button>
+        </div>
+        <div class="col-10 bg-light text-sm-center results">
+        </div>
+        <div class="col-10 bg-info">
+          <h1 class="text-sm-center">footer</h1>
+        </div>
+
       </div>
 
     </div>
 
-  </div>
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js" integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js" integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7" crossorigin="anonymous"></script>
+    <script src="./assets/javascript/app.js" type="text/javascript"></script>
 </body>
 
 </html>
