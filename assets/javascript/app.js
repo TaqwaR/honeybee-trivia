@@ -1,12 +1,71 @@
-//psuedocode -- trivia game
+
 
 // variables:
 var correct;
 var wrong;
+var totalSeconds = 60;
+var myInterval;
+var quizContent;
+var resultsBtn;
 
 
 
 //functions
+
+///Clear document of quiz div
+function clearQuiz() {
+    quizContent = $("form").detach();
+    resultsBtn = $("button").detach();
+    $(".load-btn").append('<button type="button" class="btn btn-success btn-lg btn-spacing center-block">Start</button>');
+};
+
+
+
+////on click, displays quiz questions and answers
+function clickStart() {
+  $(".btn").click(function() {
+    $(".load-btn").empty();
+    $(".results-button").append(resultsBtn);
+    $(".time-left").prepend(start());
+    $(".quiz-div").append(quizContent);
+  });
+};
+
+////displays results in results div/class, and stops interval timer
+$(".results-button").click(function() {
+    $(".results").html("<p> you got " + correct + " correct and " + wrong + " wrong.</p>");
+    timeUp();
+    clearQuiz();
+});
+
+
+////sets countdown timer
+function start() {
+  myInterval = setInterval(decreaseTotalSecs, 1000);
+}
+
+
+////decreases countdown timer by 10 second increments
+function decreaseTotalSecs() {
+  totalSeconds -= 1;
+  console.log(totalSeconds);
+  $(".time-left").text("You have " + totalSeconds + " seconds remaining.")
+
+  if (totalSeconds == 0) {
+    timeUp();
+    alert("Time's up")
+  }
+}
+
+
+////stops countdown timer
+function timeUp() {
+    clearInterval(myInterval);
+}
+
+
+
+////checks answers
 function checkAnswers() {
   var question1 = $("input[name='question1']:checked").val();
   var question2 = $("input[name='question2']:checked").val();
@@ -64,10 +123,11 @@ function checkAnswers() {
   console.log(wrong);
 };
 
-$("input").click(function() {
-  checkAnswers();
-});
+/////Process
 
-$(".btn").click(function() {
-  $(".results").html("<p> you got " + correct + " correct and " + wrong + " wrong.</p>");
+clearQuiz();
+clickStart();
+checkAnswers()
+$("input").click(function() { //adds up radio inputs and adds them to correct/wrong variables
+  checkAnswers();
 });
