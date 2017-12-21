@@ -1,5 +1,4 @@
 
-
 // variables:
 var correct;
 var wrong;
@@ -7,8 +6,6 @@ var totalSeconds = 10;
 var myInterval;
 var quizContent;
 var resultsBtn;
-
-
 
 //functions
 
@@ -19,15 +16,13 @@ function clearQuiz() {
     $(".load-btn").append('<button type="button" class="btn btn-success btn-lg btn-spacing center-block">Start</button>');
 };
 
-
-
 ////on click, displays quiz questions and answers
 function clickStart() {
   $(".btn").click(function() {
     $(".load-btn").empty();
     $(".results-button").append(resultsBtn);
     $(".time-left").prepend(start());
-    $(".quiz-div").append(quizContent);
+    $(".quiz-div").prepend(quizContent);
   });
 };
 
@@ -37,12 +32,10 @@ $(".results-button").click(function() {
     timeUp();
 });
 
-
 ////sets countdown timer
 function start() {
   myInterval = setInterval(decreaseTotalSecs, 1000);
 }
-
 
 ////decreases countdown timer by 10 second increments
 function decreaseTotalSecs() {
@@ -55,16 +48,14 @@ function decreaseTotalSecs() {
     alert("Time's up")
     quizContent = $("form").detach();
     resultsBtn = $("button").detach();
+    $(".results").html("<p> you got " + correct + " correct and " + wrong + " wrong.</p>");
   }
 }
-
 
 ////stops countdown timer
 function timeUp() {
     clearInterval(myInterval);
 }
-
-
 
 ////checks answers
 function checkAnswers() {
@@ -125,7 +116,6 @@ function checkAnswers() {
 };
 
 /////Process
-
 clearQuiz();
 clickStart();
 checkAnswers()
