@@ -69,7 +69,7 @@ function checkAnswers() {
   correct = 0;
   wrong = 0;
 
-  if (question1 == "1/12 teaspoon of honey") {
+  if (question1 == "1/12 tsp of honey") {
       correct += 1;
     } else {
       wrong += 1
@@ -81,7 +81,7 @@ function checkAnswers() {
       wrong += 1
   }
 
-  if (question3 == "1,000-3,000 eggs per day" ) {
+  if (question3 == "1,000-3,000 eggs/day" ) {
     correct += 1;
   } else {
     wrong += 1
