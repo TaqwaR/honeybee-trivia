@@ -3,7 +3,7 @@
 // variables:
 var correct;
 var wrong;
-var totalSeconds = 60;
+var totalSeconds = 10;
 var myInterval;
 var quizContent;
 var resultsBtn;
@@ -35,7 +35,6 @@ function clickStart() {
 $(".results-button").click(function() {
     $(".results").html("<p> you got " + correct + " correct and " + wrong + " wrong.</p>");
     timeUp();
-    clearQuiz();
 });
 
 
@@ -54,6 +53,8 @@ function decreaseTotalSecs() {
   if (totalSeconds == 0) {
     timeUp();
     alert("Time's up")
+    quizContent = $("form").detach();
+    resultsBtn = $("button").detach();
   }
 }
 
