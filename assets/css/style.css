@@ -3,6 +3,15 @@ h5 {
   padding-bottom: .5em;
 }
 
+body {
+  background-image: url("../images/hive-bg.jpg");
+}
+
+.my-container {
+  background-color: white;
+  width: 830px;
+}
+
 .mc {
   /* //float: left; */
 }
