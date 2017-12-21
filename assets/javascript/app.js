@@ -2,7 +2,7 @@
 // variables:
 var correct;
 var wrong;
-var totalSeconds = 10;
+var totalSeconds = 35;
 var myInterval;
 var quizContent;
 var resultsBtn;
