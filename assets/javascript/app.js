@@ -3,7 +3,7 @@
 //================================
 var correct;
 var wrong;
-var totalSeconds = 12;
+var totalSeconds = 41;
 var myInterval;
 var quizContent;
 var resultsBtn;
