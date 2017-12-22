@@ -1,6 +1,26 @@
-h5 {
+h1, h2, h3 {
+  font-family: 'Bungee', cursive;
+}
+
+
+h4 {
   padding-top: 2em;
   padding-bottom: .5em;
+  font-family: 'Bungee', cursive;
+}
+
+h5 {
+  /* font-family: 'Alegreya', serif; */
+  font-family: font-family: 'Roboto', sans-serif;
+  font-weight: bolder;
+  padding-bottom: 0.5em;
+  padding-top: 0.8em;
+
+}
+
+p {
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
 }
 
 body {
@@ -10,6 +30,8 @@ body {
 .my-container {
   background-color: white;
   width: 830px;
+  margin-top: 2em;
+  margin-bottom: 2em;
 }
 
 .mc {
@@ -20,11 +42,15 @@ body {
   /* //float: left; */
   margin-right: 1em;
   margin-left: .5em;
+  /* font-family: 'Alegreya', serif; */
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
 }
 
 .btn-spacing {
   margin-top: 1em;
   margin-bottom: 1em;
+  margin-left: 17em;
 }
 
 .my-jumbotron {
@@ -32,7 +58,19 @@ body {
 }
 
 .my-footer {
-  background-color: brown;
+  background-color: gold;
   border-radius: 4px;
   margin-top: 3em;
+  height: 4em;
+}
+
+.strt-gif {
+  margin-left: 7em;
+  margin-bottom: 1em;
+  /* padding-bottom: 0em; */
+  border-radius: 21px;
+}
+
+.results img {
+  margin-bottom: 1em;
 }

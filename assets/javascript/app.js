@@ -1,22 +1,24 @@
 
-// variables:
+//////variables:
+//================================
 var correct;
 var wrong;
-var totalSeconds = 35;
+var totalSeconds = 12;
 var myInterval;
 var quizContent;
 var resultsBtn;
 
-//functions
+//////functions
+//================================
 
-///Clear document of quiz div
+//clear document of quiz div
 function clearQuiz() {
     quizContent = $("form").detach();
     resultsBtn = $("button").detach();
-    $(".load-btn").append('<button type="button" class="btn btn-success btn-lg btn-spacing center-block">Start</button>');
+    $(".load-btn").append('<button type="button" class="btn btn-success btn-lg btn-spacing center-block"><h3>Start</h3></button>');
 };
 
-////on click, displays quiz questions and answers
+//on click, displays quiz questions and answers
 function clickStart() {
   $(".btn").click(function() {
     $(".load-btn").empty();
@@ -26,38 +28,33 @@ function clickStart() {
   });
 };
 
-////displays results in results div/class, and stops interval timer
-$(".results-button").click(function() {
-    $(".results").html("<p> you got " + correct + " correct and " + wrong + " wrong.</p>");
-    timeUp();
-});
-
-////sets countdown timer
+//sets countdown timer
 function start() {
   myInterval = setInterval(decreaseTotalSecs, 1000);
 }
 
-////decreases countdown timer by 10 second increments
+//decreases countdown timer by 10 second increments
 function decreaseTotalSecs() {
   totalSeconds -= 1;
-  console.log(totalSeconds);
   $(".time-left").text("You have " + totalSeconds + " seconds remaining.")
 
-  if (totalSeconds == 0) {
+  if (totalSeconds === 0) {
     timeUp();
-    alert("Time's up")
+    // alert("Time's up")
     quizContent = $("form").detach();
     resultsBtn = $("button").detach();
-    $(".results").html("<p> you got " + correct + " correct and " + wrong + " wrong.</p>");
+    $(".results").html("<p>You got " + correct + " correct and " + wrong + " wrong.</p>");
+    gifOptions();
   }
 }
 
-////stops countdown timer
+//stops countdown timer
 function timeUp() {
     clearInterval(myInterval);
+    checkAnswers()
 }
 
-////checks answers
+//checks answers
 function checkAnswers() {
   var question1 = $("input[name='question1']:checked").val();
   var question2 = $("input[name='question2']:checked").val();
@@ -109,16 +106,38 @@ function checkAnswers() {
     correct += 1;
   } else {
     wrong += 1
-}
-
-  console.log(correct);
-  console.log(wrong);
+  }
 };
 
-/////Process
+function gifOptions() {
+  if (correct >= 5) {
+    $(".results").append('<img src="./assets/images/pooh.gif" alt="winne the pooh eating honey">');
+    $(".results").append('<p>...A fellow bee aficionado!😍</p>')
+  } else if (correct >= 3) {
+    $(".results").append('<img src="./assets/images/slow-bees.gif" alt="slow flying bees">');
+    $(".results").append("<p>Not bad! Curious to learn more? Check out the <a href='http://www.dcbeekeepers.org/annual-beginning-beekeeping-course-information'>DC Beekeeper's annual class.</a></p>")
+  } else {
+    $(".results").append('<img src="./assets/images/bee-illus.gif" alt="flying bee illustration">');
+    $(".results").append("<p><a href='http://a.co/24vmewQ'>Honeybee Deomcracy</a> is a great read. You'll be a pro in no time.</p>")
+  }
+}
+
+//////Process
+//================================
 clearQuiz();
 clickStart();
-checkAnswers()
-$("input").click(function() { //adds up radio inputs and adds them to correct/wrong variables
-  checkAnswers();
+
+
+//displays results in 'results' div/class, and stops interval timer
+$(".results-button").click(function() {
+    checkAnswers();
+    console.log(correct);
+    console.log(wrong);
+    $(".results").html("<p>You got " + correct + " correct and " + wrong + " wrong.</p>");
+
+    gifOptions();
+
+    timeUp();
+    clearQuiz();
+    $('.load-btn').empty();
 });
